@@ -6,6 +6,10 @@ body {
   background-color: rgb(192, 201, 158)
 }
 
+p {
+  text-align: justify;
+}
+
 header {
   background-color: rgb(61, 60, 73);
   padding-top: 3px;
@@ -63,6 +67,52 @@ header {
   margin: 6px 0;
 }
 
+
+/* ... Tes styles précédents restent inchangés ... */
+
+#projets-sio h2 {
+    color: #000000 !important; /* CHANGEMENT : Titre en NOIR */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Flexbox pour mettre l'image à gauche du texte de mission */
+.projet-contenu {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start; /* Aligne en haut */
+    margin: 15px 0;
+}
+
+.projet-contenu img {
+    width: 30%; /* L'image prend 30% de la largeur */
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    object-fit: cover;
+}
+
+.mission-text {
+    flex: 1; /* Le texte prend le reste de la place */
+}
+
+/* Responsive : sur téléphone, l'image passe au dessus du texte */
+@media (max-width: 768px) {
+    .projet-contenu {
+        flex-direction: column;
+    }
+    .projet-contenu img {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+/* Reste de ton CSS ... */
+
+
+
+
 /* Style de base pour la liste */
 #menu ul {
   margin-top: 20px;
@@ -82,13 +132,6 @@ header {
   width: 100%; /* Largeur totale */
 }
 
-/* Style de la liste */
-#menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-}
 
 /* Style des onglets */
 #menu ul li {
@@ -114,7 +157,7 @@ header {
 /* Style pour l'onglet actif */
 #menu ul li a.active {
   background-color: #494949; /* Couleur de fond de l'onglet actif */
-  color: #000000; /* Couleur du texte de l'onglet actif */
+  color: #ffffff; /* Couleur du texte de l'onglet actif remis en BLANC pour visibilité */
 }
 
 section {
@@ -125,6 +168,68 @@ section {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+#projets-sio {
+    background-color: rgb(236, 231, 231); /* Ton gris/blanc d'origine */
+    max-width: 1300px;
+    margin: 2em auto;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.projet-card {
+  background: #ffffff;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  padding: 25px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-top: 5px solid rgb(61, 60, 73); /* Rappel couleur header */
+}
+
+/* Sous-titres des blocs de mission */
+.mission-block h4 {
+  color: #2980b9; /* Bleu pour les titres internes */
+  text-transform: uppercase;
+  font-size: 0.9em;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+/* Grille pour les listes côte à côte */
+.grid-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 15px 0;
+}
+
+/* Couleurs pour difficultés et apports */
+.points-negatifs {
+  background-color: #fff5f5;
+  border-left: 4px solid #e74c3c;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+.points-positifs {
+  background-color: #f0fff4;
+  border-left: 4px solid #2ecc71;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+/* Zone Avis Personnel */
+.reflexion-personnelle {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  font-style: italic;
+  border-left: 4px solid #3498db;
+  margin-top: 20px;
+}
 /* ===== Images Pourquoi BTS ===== */
 .pourquoi-contenu {
   display: flex;
@@ -311,9 +416,6 @@ align-items: center; /* Alignement vertical au début de la hauteur de l'image *
   align-items: center; /* Alignement vertical au début de la hauteur de l'image */
   }
 
-
-
-
 /** Style pour le Debian */
 .Debian {
   margin-top: 40px;
@@ -332,8 +434,6 @@ align-items: center; /* Alignement vertical au début de la hauteur de l'image *
   display: flex; /* Utilisation de flexbox pour le placement des éléments */
   align-items: center; /* Alignement vertical au début de la hauteur de l'image */
 }
-
-
 
 /** Style pour le Linux */
 .Linux {
@@ -354,7 +454,6 @@ align-items: center; /* Alignement vertical au début de la hauteur de l'image *
   align-items: center; /* Alignement vertical au début de la hauteur de l'image */
 }
 
-
 /** Style pour le Télé */
 .Télé {
   margin-top: 40px;
@@ -373,8 +472,6 @@ align-items: center; /* Alignement vertical au début de la hauteur de l'image *
   display: flex; /* Utilisation de flexbox pour le placement des éléments */
   align-items: center; /* Alignement vertical au début de la hauteur de l'image */
 }
-
-
 
 /** Style pour le Web */
 .Web {
@@ -395,8 +492,6 @@ align-items: center; /* Alignement vertical au début de la hauteur de l'image *
   align-items: center; /* Alignement vertical au début de la hauteur de l'image */
 }
 
-
-
 /** Style pour le Qual1 */
 .Qual1 {
   margin-top: 40px;
@@ -416,9 +511,6 @@ align-items: center; /* Alignement vertical au début de la hauteur de l'image *
   align-items: center; /* Alignement vertical au début de la hauteur de l'image */
 }
 
-
-
-
 /** Style pour le Rallye */
 .Rallye {
   margin-top: 40px;
@@ -437,7 +529,6 @@ align-items: center; /* Alignement vertical au début de la hauteur de l'image *
   display: flex; /* Utilisation de flexbox pour le placement des éléments */
   align-items: center; /* Alignement vertical au début de la hauteur de l'image */
 }
-
 
 /** Style pour le Muscu */
 .Muscu {
@@ -476,11 +567,6 @@ align-items: center; /* Alignement vertical au début de la hauteur de l'image *
   display: flex; /* Utilisation de flexbox pour le placement des éléments */
   align-items: center; /* Alignement vertical au début de la hauteur de l'image */
 }
-
-
-
-
-
 
 img {
   max-width: 100%;
@@ -534,5 +620,3 @@ footer {
   margin: 0;
   display: flex;
 }
-
-
